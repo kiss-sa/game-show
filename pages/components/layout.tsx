@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import Head from "next/head";
-import { Inter } from "next/font/google";
+import { Pangolin } from "next/font/google";
 import "../styles/globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const pangolin = Pangolin({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +19,7 @@ export default function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className={inter.className}>
+    <div className={pangolin.className}>
       <Head>
         <title>Wombat's Wondrous Trivia Time</title>
         <meta name="description" content="Trivia Fun for the whole family!" />

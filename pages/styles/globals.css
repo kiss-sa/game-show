@@ -2,32 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
+} */
+
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-image: url("/static/crumpeled_paper.jpg");
+  font-size: larger;
+  font-family: "Pangolin";
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  width: 80%;
+  max-width: fit-content;
+}
+
+.category-column {
+  text-align: center;
+  padding: 20px;
+}
+.question {
+  width: 150px; 
+  height: 3rem;
+  background:transparent;
+  padding: 0.255rem 0.5rem;
+  margin: 2rem 1rem;
+  font-size: larger;
+  text-align: center;
+
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  border-bottom-right-radius: 225px 15px;
+  border-bottom-left-radius:15px 255px;
+  border:solid 3px #41403E;
+}
+
+.question:hover{
+  box-shadow:2px 8px 4px -6px hsla(0,0%,0%,.3);
 }

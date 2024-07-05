@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function HomePage() {
   return (
     <>
       <div className="flex items-center justify-center h-screen">
-        <h1 className="text-6xl font-bold">Hello, Gameshow!</h1>
-      </div>
-      <div className="flex items-center justify-center h-screen">
-        <button>Get Started</button>
+        <div className="flex">
+          <h1 className="text-6xl font-bold">Hello, Gameshow!</h1>
+        </div>
+
+        <Link href={"/board?id=1"}>
+          <button>Get Started</button>
+        </Link>
       </div>
     </>
   );
