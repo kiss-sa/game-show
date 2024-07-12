@@ -44,14 +44,8 @@ body {
   padding: 20px;
 }
 .question {
-  width: 150px; 
-  height: 3rem;
   background:transparent;
-  padding: 0.255rem 0.5rem;
   margin: 2rem 1rem;
-  font-size: larger;
-  text-align: center;
-
   
   border-top-left-radius: 255px 15px;
   border-top-right-radius: 15px 225px;

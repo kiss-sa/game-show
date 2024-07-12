@@ -5,6 +5,7 @@ export interface Question {
   question: string; 
   points: number; 
   image?: string; 
+  audio?: string;
 }
 
 export interface Category {
@@ -33,12 +34,13 @@ export default function handler(
             id: 1,
             question: "Who was the first president of the United States?",
             points: 100,
-            image: "https://example.com/image1.jpg"
+            image: "https://www.whitehouse.gov/wp-content/uploads/2021/01/01_george_washington.jpg"
           },
           {
             id: 2, 
             question: "In what year did the Titanic sink?",
-            points: 200
+            points: 200, 
+            audio: "test.mp3"
           },
           {
             id: 3, 

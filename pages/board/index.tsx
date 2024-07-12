@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { Board, Category, Question } from "../api/board";
 import { atom, useAtom } from "jotai";
+import goBack from "../assets/go_back.png";
 
 export const touchedQuestionsAtom = atom([] as number[]);
 
@@ -23,19 +24,40 @@ export default function Boardpage() {
   }, []);
 
   return (
-    <div className="flex items-center justify-center h-screen">
+    <div className="flex items-center justify-center h-screen w-screen">
       {question ? (
-        <div style={{ visibility: question ? "visible" : "hidden" }}>
-          <div>{question?.question}</div>
-          <br />
-          <div style={{ cursor: "pointer" }} onClick={() => setQuestion(null)}>
-            Go back
+        <div className="flex h-4/5 flex-col justify-between w-9/12">
+          <div className="flex text-5xl h-full justify-center items-center leading-loose text-center">
+            <>{question?.question}</>
+          </div>
+          {question.image && (
+            <div className="flex text-5xl h-full justify-center items-center">
+              <img className="max-h-80" src={question.image} />
+            </div>
+          )}
+          {question.audio && (
+            <div className="flex text-5xl h-full justify-center items-center">
+              <audio controls>
+                <source
+                  src={require(`../assets/${question.audio}`).default}
+                  type="audio/mpeg"
+                />
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          )}
+          <div
+            className="max-h-20"
+            style={{ cursor: "pointer" }}
+            onClick={() => setQuestion(null)}
+          >
+            <img className="max-h-20" src={goBack.src} />
           </div>
         </div>
       ) : (
         <div className="grid-container">
           {board?.categories.map((cat: Category) => (
-            <div className="category-column">
+            <div className="category-column text-4xl">
               <h2>{cat.name}</h2>
               {cat.questions.map((question, indx) => (
                 <QuestionRectangle
@@ -70,13 +92,13 @@ function QuestionRectangle(params: QuestionParams) {
 
   return (
     <div
-      className="question"
+      className="question text-4xl w-60 h-20 flex items-center justify-center"
       onClick={() => {
         handleClick();
       }}
       style={{ background: touched ? "rgba(250, 128, 113, 0.4)" : undefined }}
     >
-      <p>{question.points}</p>
+      <div className="">{question.points}</div>
     </div>
   );
 }

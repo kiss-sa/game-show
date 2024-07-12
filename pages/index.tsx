@@ -6,13 +6,15 @@ export default function HomePage() {
   return (
     <>
       <div className="flex items-center justify-center h-screen">
-        <div className="flex">
-          <h1 className="text-6xl font-bold">Hello, Gameshow!</h1>
-        </div>
+        <div>
+          <div className="flex">
+            <h1 className="text-6xl font-bold">Hello, Gameshow!</h1>
+          </div>
 
-        <Link href={"/board?id=1"}>
-          <button>Get Started</button>
-        </Link>
+          <Link href={"/board?id=1"} className="flex">
+            <button>Get Started</button>
+          </Link>
+        </div>
       </div>
     </>
   );
