@@ -1,20 +1,24 @@
 import React, { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
 import { Board, Category, Question } from "../api/board";
 import { atom, useAtom } from "jotai";
 import goBack from "../assets/go_back.png";
+import { useSearchParams } from "next/navigation";
+import { useRouter } from "next/router";
 
 export const touchedQuestionsAtom = atom([] as number[]);
 
 export default function Boardpage() {
-  const searchParams = useSearchParams();
-  const boardID = searchParams?.get("id");
   const [board, setBoard] = useState<Board>();
   const [question, setQuestion] = useState<Question | null>(null);
 
+  const router = useRouter();
+  const { id } = router.query;
+
+  console.log(id);
+
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("/api/board");
+      const response = await fetch(`/api/board?id=${id}`);
       const data = await response.json();
       console.log(data);
       setBoard(data.board);
