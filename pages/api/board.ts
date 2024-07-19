@@ -51,7 +51,10 @@ function transformBoard(lines: QuestionLine[]): Board[] {
 
   return Array.from(boardMap.entries()).map(([boardId, categoriesMap]) => ({
     id: boardId,
-    categories: Array.from(categoriesMap.values()),
+    categories: Array.from(categoriesMap.values()).map((category) => {
+      category.questions.sort((a, b) => a.points - b.points);
+      return category;
+    }),
   }));
 }
 
