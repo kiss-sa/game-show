@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import * as path from "path";
 import { parseCSV, QuestionLine } from "./read_file";
+import { sleep } from "./util";
 
 export interface Question {
   id: number;
@@ -44,8 +45,8 @@ function transformBoard(lines: QuestionLine[]): Board[] {
       id: indx,
       question: line.question,
       points: parseInt(line.points),
-      image: line.image !== "" ? line.image : undefined,
-      audio: line.audio !== "" ? line.audio : undefined,
+      image: line.image,
+      audio: line.audio,
     });
   });
 
@@ -62,8 +63,10 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<any>
 ) {
-  const csvFilePath = path.resolve("./assets/test.csv");
+  const csvFilePath = path.resolve("./assets/data.csv");
   const { query } = req;
+
+  await sleep(20000); 
 
   const queryID = query["id"];
   if (!queryID) {
