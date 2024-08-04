@@ -7,5 +7,14 @@ export function webpack(config, options) {
             loader: "url-loader",
         },
     });
+    config.module.rules.push({
+        test: /\.csv$/,
+        loader: 'csv-loader',
+        options: {
+          dynamicTyping: true,
+          header: true,
+          skipEmptyLines: true,
+        },
+      });
     return config;
 }

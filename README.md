@@ -7,7 +7,7 @@ This project uses [React](https://react.dev/versions) together with [Next.js](ht
 Navigate to the the repository folder, and use the following command to install all dependencies:
 
 ```bash
-npm intall
+npm install
 ```
 
 To start a developement server use the following:

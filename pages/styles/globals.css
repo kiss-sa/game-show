@@ -17,6 +17,13 @@
   }
 } */
 
+@font-face {
+  font-family: 'Qontra';
+  src: url('/fonts/Qontra.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 body {
   color: rgb(var(--foreground-rgb));
