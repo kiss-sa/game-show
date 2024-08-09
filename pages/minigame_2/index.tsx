@@ -35,8 +35,6 @@ export default function Minigame1() {
     }
   }, [idx, themes]);
 
-  console.log(themes[idx], audios);
-
   return (
     <div className="flex items-center justify-center h-screen w-screen flex-col">
       <div className="text-5xl">{titleDesc.title}</div>
