@@ -30,7 +30,7 @@ export default function Boardpage() {
   if (isLoading) {
     return (
       <Loading
-        startIdx={(id as string) !== "" ? parseInt(id as string) - 1 : 0}
+        startIdx={(id as string) !== "" ? (parseInt(id as string) - 1) * 3 : 1}
       />
     );
   }

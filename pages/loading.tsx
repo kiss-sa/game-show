@@ -4,7 +4,9 @@ import FadeLoader from "react-spinners/FadeLoader";
 
 export default function Loading(props: { startIdx: number }) {
   const { startIdx } = props;
-  const [idx, setCurrIdx] = useState(0);
+  const [idx, setCurrIdx] = useState<number>(startIdx);
+
+  console.log(startIdx, idx);
 
   useEffect(() => {
     const interval = setInterval(() => {
