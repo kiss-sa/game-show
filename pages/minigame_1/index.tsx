@@ -35,6 +35,8 @@ export default function MiniGame() {
     return null;
   }, [files, currentTheme]);
 
+  console.log(currentFiles ? currentFiles[idx] : "undefined");
+
   return (
     <div className="flex items-center justify-center h-screen w-screen flex-col">
       {currentTheme === null ? (
@@ -156,7 +158,7 @@ const QuizImageReveal = (props: RevealProps) => {
           style={{
             clipPath: `circle(${radius}% at 50% 50%)`,
             transition: "clip-path 0.1s linear",
-            maxHeight: "850px",
+            maxHeight: "700px",
             margin: "auto",
           }}
           src={src}
