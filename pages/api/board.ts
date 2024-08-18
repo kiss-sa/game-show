@@ -66,7 +66,7 @@ export default async function handler(
   const csvFilePath = path.resolve("./assets/data.csv");
   const { query } = req;
 
-  await sleep(20000); 
+  await sleep(21000); 
 
   const queryID = query["id"];
   if (!queryID) {

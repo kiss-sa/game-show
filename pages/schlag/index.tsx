@@ -9,23 +9,22 @@ export default function MiniuteToWinIt() {
       {start ? (
         <TitlePage
           titles={[
-            "Building High",
-            "Find the Missing",
-            "Water Ping",
-            "In the middle",
-            "Go Fish",
-            "Go Fish, Part II: Electric Boogaloo",
+            "Half'n'Half",
+            "18cm :^)",
+            "Ham's einen Euro?",
+            "Wer weiß mehr",
+            "Les upsetti more Spaghetti",
+            "FINALE 50er Würfeln",
           ]}
         />
       ) : (
         <div className="flex text-5xl items-center justify-center h-screen w-screen">
-          <div className="m-auto leading-loose m-40">Minute to Win it</div>
+          <div className="m-auto leading-loose m-40">Schlag das Wombat</div>
           <div className="flex text-xl flex-col">
             <div>
-              6 Runden von kleinen Aufgaben für jeweils ein Teammitglied mit
-              einer Minute Zeit.
+              Es werden 6 verschiedene Spiele gespielt, teilweise im Team,
+              teilweise jeweils eine Person.
             </div>
-            <div>Ihr tretet gleichzeitig gegeneinander an.</div>
             <div>
               Das gewinnende Team bekommt <b>400 Punkte</b>.
             </div>

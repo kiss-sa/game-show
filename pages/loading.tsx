@@ -4,12 +4,12 @@ import FadeLoader from "react-spinners/FadeLoader";
 
 export default function Loading(props: { startIdx: number }) {
   const { startIdx } = props;
-  const [idx, setCurrIdx] = useState(0);
+  const [idx, setCurrIdx] = useState<number>(startIdx);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrIdx((prevIndex) => (prevIndex + 1) % tips.length);
-    }, 10000);
+    }, 7000);
 
     return () => clearInterval(interval);
   }, [tips.length]);
@@ -33,5 +33,10 @@ const tips = [
   "Auch Nutzer von Verliererkraut können die Handwerksfähigkeit “Gärtner” erwerben.",
   "Die “Fleißig”-Eigenschaft ermöglicht schnellen Progress durch den Einsatz mentaler Gesundheit.",
   "Steuerhinterziehung und Arbeitszeitbetrug sind effektive Mittel, um deine Ressourcen zu maximieren. Ingame natürlich.",
-  "Beim Spielen nicht auf die 3R vergessen: Reduce, Reuse, Recycle",
+  "Beim Spielen nicht auf die 3G vergessen: Girlboss, Gaslight, Gatekeep",
+  "Getränk nicht kalt genug? Der kleine Gletscher Ymir schafft Abhilfe!",
+  "WWTT - Was würden Tomaten tun?",
+  "Wo wirre Wombats Wunder wirken, werden Wunden wieder binden.",
+  "Die Terrasse spendet auch nachts noch Wärme",
+  "Schon beim Hotelanimateur für ein Workout angefragt?",
 ];
